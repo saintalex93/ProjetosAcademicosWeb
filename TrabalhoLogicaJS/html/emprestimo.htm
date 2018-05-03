@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../css/style.css">
+	<title>Empréstimo</title>
+</head>
+<body>
+
+
+	<h1 class="titulo">Empréstimo</h1>
+
+	<p>Este Script simula um empréstimo, mostrando uma tabela preenchida com os juros embutidos diretamente na parcela e mostrando o valor total do empréstimo. Antes de efetuar o cálculo, ele irá analisar se o empréstimo é superior ou igual a 3 vezes o salário, caso não seja, será indeferido.</p>	<br>
+
+
+	<div class="botoes">
+
+		<button onclick="hide(this)" id="tabela" class="Hover">Tabela</button>
+		<button onclick="hide(this)" id="empreste" class="Hover">Empreste</button>	
+
+	</div>
+	
+	<div class="chameleon">
+		
+		<div class="hidden" id="DTabela">
+
+			<table border="1">
+				
+				<caption>Tabela de Juros</caption>
+							
+
+				<tr>
+					<td>Parcelas</td>
+					<td>Juros</td>
+				</tr>
+
+				<tr>
+					<td>Até 2 parcelas</td>
+					<td>5%</td>
+				</tr>
+
+				<tr>
+					<td>Até 6 parcelas</td>
+					<td>15%</td>
+				</tr>
+
+				<tr>
+					<td>Até 10 parcelas</td>
+					<td>25%</td>
+				</tr>
+
+
+			</table>
+
+		</div>
+
+		<div class="hidden" id="DEmpreste">
+			
+			<h1>Simule:</h1>
+			<form action="" id="formEmpreste">
+
+				<label for="salario">Salário:</label> 
+				<input type="text" name="salario" id="salario" onkeypress="mascara(this)" maxlength="11">
+				<label for="">Empréstimo:</label><input type="text" id="emprestimo" onkeypress="mascara(this)" maxlength="11">
+				<label for="">Parcelas:</label>	<select name="parcelas" id="parcelas">
+					<option value="">Selecione</option>
+					<option value="1">1x</option>
+					<option value="2">2x</option>
+					<option value="3">3x</option>
+					<option value="4">4x</option>
+					<option value="5">5x</option>
+					<option value="6">6x</option>
+					<option value="7">7x</option>
+					<option value="8">8x</option>
+					<option value="9">9x</option>
+					<option value="10">10x</option>
+				</select>
+			
+			
+
+			</form>
+
+			<a href="#result"><button class="BtnSimular Hover" onclick="emprestimo()" >Simular</button></a>
+		</div>
+
+		<div class="Dresultado" id="Dresultado" >
+				<a name="result" id="result"></a>
+				<label for="">Empréstimo Solicitado: </label> <label for="" id="ResEmp"></label><br>
+				<label for="">Valor Com Juros: </label> <label for="" id="ResTotal"></label><br>
+				<label for="">Em </label><label for="" id="ResPar"></label>
+				<label for=""> parcelas de </label><label for="" id="ResTParc"></label>
+		</div>
+
+	</div>
+	
+	
+	
+</body>
+
+<script src = "../JS/mascara.js"></script>
+<script src = "../JS/emprestimo.js"></script>
+<script src="../JS/hide.js"></script>
+
+</html>

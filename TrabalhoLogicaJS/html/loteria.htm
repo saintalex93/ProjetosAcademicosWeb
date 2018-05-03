@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Loteria</title>
+	<style>
+		#btnLottery{
+		text-align: center;
+	    font-size: 20px;
+	    height: 50px;
+	    width: 200px;
+	    color: #191970;
+		}
+
+		.container{
+			text-align: center;
+			margin: 0 auto;
+
+		}
+
+		#tableLottery, #tableShuffleUser{
+			margin: 20px auto;
+			text-align: center;
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		td{
+			border: 1px solid black;
+			width: 50px;
+		}
+
+		#successfulNumbers{
+			font-size: 20px;
+			font-weight: bold;
+			color: #191970;
+		}
+
+		#Hidde, #Hidde1{
+	
+			margin-top: 20px;
+			display: none;
+			font-size: 15px;
+			color: #191970;
+			font-weight: bold;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+	<h1>Loteria!</h1>
+
+	<p>Sorteia os números da loteria e do usuário</p>
+
+		<input type="button" name="" id	= "btnLottery" onclick="PlayAndModify()" value="Rodar Sorteio"> </input><br>
+		
+		<p id="Hidde">Sorteados pela Loteria:</p>
+		<table id="tableLottery">
+		
+			<tr></tr>	
+
+		</table> 
+		
+		<p id="Hidde1">Sorteados pelo Jogador:</p>
+		<table id="tableShuffleUser">
+		
+			<tr></tr>
+
+		</table>
+
+		<output id="successfulNumbers"></output>
+
+	</div>
+
+<script src = "../JS/loteria.js">
+
+
+</script>
+
+
+
+</body>
+</html>

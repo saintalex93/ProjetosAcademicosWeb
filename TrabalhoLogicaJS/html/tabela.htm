@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tabela</title>
+	<link rel="stylesheet" href="../css/style.css">
+
+	<style>
+
+
+		.content, .tabela{
+			margin: 0 auto;
+			text-align: center;
+			width: 100%;
+		}
+		#tableCont{
+
+			border: 3px solid black;
+			box-shadow: 2px 2px #909090;
+			font-family: sans-serif;
+			text-align: center;
+			margin: 30px auto;
+		}
+
+		th{
+			background: #606060;
+			color: #fff;
+		}
+
+		tr:nth-child(even){
+			background: #ECECEC;
+		}
+
+
+		tr:nth-child(odd){
+			background: #DFDFDF;
+
+		}
+
+		
+		td:first-child{
+			width: 50px;
+		}
+
+		td: nth-of-type(2){
+			width: 500px;
+		}
+		
+	</style>
+</head>
+<body>
+<div class="content">
+
+	<h1 class="titulo">Agenda</h1><br>
+		
+	<label for="nome">Nome:&nbsp&nbsp&nbsp&nbsp</label>
+	<input type="text" id="nome"><br><br>
+
+	<label for="telefone">Telefone:</label>
+	<input type="text" id="telefone"><br>
+
+	<p class="count-register">Número de registros: <span></span></p><br>
+
+		<button onclick ="inserir()">Inserir</button>
+	<div class="tabela">
+	  <table id="tableCont">
+
+	    <thead>
+	      <tr>
+	        <th>Nome</th>
+	        <th>Telefone</th>
+	      </tr>
+	    </thead>
+
+	    <tbody>
+
+	    </tbody>
+
+	  </table>
+	</div>
+</div>	
+
+<script src = "../JS/tabelada.js"></script>
+</body>
+</html>

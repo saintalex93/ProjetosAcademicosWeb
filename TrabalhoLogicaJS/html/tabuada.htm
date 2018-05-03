@@ -1,0 +1,90 @@
+	'	<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../css/style.css">
+	<title>Tabuada</title>
+
+	<style>
+			.tabelada{
+
+				margin: 0 auto;
+				text-align: center;
+			}	
+
+			#tabuadaD{
+				text-align: center;
+				margin:20px auto;
+			}
+
+	</style>
+
+
+</head>
+<body>
+	
+	<h1 class="titulo">Tabelada</h1>
+
+	<p>Esse Script tem como função receber um parâmetro de um número, e assim que perder o foco da caixa de texto, ele faz um for calculando a tabuada do número informado e criando uma tabela formatadada automaticamente com um document.write.</p>
+
+
+	<div class="tabelada">
+
+		<br><br>
+		<input type="text" id="numero" onblur="tabuada(this.value)">
+
+	</div>
+
+	<div id="tabuadaD"></div>
+<script>
+
+
+
+
+
+function tabuada(numero){
+
+		var cospe;
+
+		if(!isNaN(numero) && document.getElementById('numero').value != '')
+		{
+			
+			for(var i = 1; i <11; i++){
+		
+				if (cospe == undefined) {
+					cospe = '<tr> <td>'+numero+'</td>' +
+					 '<td>'+' x '+'</td>' +
+					 '<td>'+ i +'</td>' 
+					 +'<td>'+' = ' +'</td>'+
+					 '<td>'+ (i*numero) + '</td> </tr>';
+			}	
+			else{
+					cospe = cospe + '<tr> <td>'+numero+'</td>' +
+					 '<td>'+' x '+'</td>' +
+					 '<td>'+ i +'</td>' 
+					 +'<td>'+' = ' +'</td>'+
+					 '<td>'+ (i*numero) + '</td> </tr>';
+			}
+		}
+
+		document.getElementById('tabuadaD').innerHTML = "<table border='1' class = 'tabuada' style='font-size: 30px;  border-collapse: collapse; width: 250px; text-align: center; margin: 0 auto; '>"+
+			
+			"" + cospe +""+
+
+		"</Table>";
+
+		}
+
+		else
+			alert('Favor Inserir um número');
+}
+
+</script>	
+
+
+</body>
+</html>
+
+
+
+

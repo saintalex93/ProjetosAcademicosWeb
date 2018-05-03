@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/style.css">
+
+	<style>
+		.container{
+			text-align: center;
+			margin: 0 auto;
+		}
+		input{
+			margin:10px 0;
+		}
+
+		#Table{
+			text-align: center;
+			margin: 30px auto;
+						border: 1px solid black;
+			border-collapse: collapse;
+		}
+		#Table td, #Table th{
+			width: 100px;
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		
+		tr:nth-child(even){
+			background-color: #ccc;
+		}
+
+
+		#buttons{
+			margin-top: 20px;
+		}
+
+	</style>
+</head>
+<body>
+
+
+	<div class="container">
+
+	<h1 class="titulo">Média Aluno</h1><br>
+	<p>O script faz uma média das notas do aluno e adiciona em uma tabela. È possível imprimir a tabela.</p><br>
+
+		<div class="dataInput" id="dataInput">
+
+		Nome  : <input type="text" id="field0"><br>
+		Nota 1: <input type="number" id="field1"><br>
+		Nota 2: <input type="number" id="field2"><br>
+		Nota 3: <input type="number" id="field3"><br>
+
+		<div id="buttons">
+			<button id="enviar" onclick="enviar()">Adicionar</button>
+			<button name = "imprimir" id = "btnImprimir" onclick="printForm()" value="Imprimir">Imprimir</button>	
+		</div>
+
+
+
+		</div>
+
+		<table id="Table">
+			<thead>
+		      <tr>
+		        <th>Nome</th>
+		        <th>Nota1</th>
+		        <th>Nota2</th>
+		        <th>Nota3</th>
+		        <th>Média</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		    </tbody>
+		</table>
+
+	</div>
+
+
+<script>
+	
+	var alunos = [];
+	var concat;
+	var table = document.querySelector('#Table tbody'); 
+	var media;
+	function enviar(){
+		media = 0;
+		concat = undefined;
+		alunos = [];
+		var campos = [document.getElementById('field0').value, document.getElementById('field1').value, document.getElementById('field2').value, document.getElementById('field3').value];
+
+		for(var i = 0; i < 4; i++){
+
+			alunos.push(campos[i]);
+			console.log(campos[i]);
+			i > 0 ?( media = media + eval( campos[i] )) : media = 0;
+			concat == undefined ? concat = "<td>"+alunos[i]+"</td>" :
+			concat = concat + "<td>"+alunos[i]+"</td>";
+		}
+		media = media / 3;
+		concat = concat + "<td>" +media+ "</td>" ; 
+	
+		table.innerHTML += "<tr>" +concat + "</tr>";
+
+
+	}
+
+
+
+function printForm(){
+
+
+	document.getElementById('dataInput').style.display = 'none';
+	document.getElementById('buttons').style.display = 'none';
+	window.print();
+	document.getElementById('dataInput').style.display = 'block';
+	document.getElementById('buttons').style.display = 'block';
+
+	var table = document.querySelector('#Table tbody'); 
+
+    while( table.hasChildNodes() )
+    {
+      table.removeChild( table.firstChild ); 
+    }
+
+
+}
+
+
+</script>
+
+	
+</body>
+</html>

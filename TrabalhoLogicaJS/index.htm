@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>Lógica de Programação</title>
+
+    <script src="JS/hora.js"></script>
+
+</head>
+<body id="corpo">
+
+
+    <div class="menu-container">
+        <ul class="menu clearfix">
+
+            <li><a href="#">Desvios Condicionais</a>
+                <ul class="sub-menu clearfix">
+                    <li><a href="DataHora.htm" target="pagina">Data e Hora</a></li>
+                    <li><a href="html/emprestimo.htm" target="pagina">Empréstimo</a></li>
+                    <li><a href="html/bilhete.htm" target="pagina">Saldo Bilhete</a></li>
+                    <li><a href="html/palavra.htm" target="pagina">Palavra</a></li>
+                    <li><a href="html/imparpar.htm" target="pagina">Impar ou Par</a></li>
+                    <li><a href="html/sequencial.htm" target="pagina">Desvio Sequencial</a></li>
+
+                </ul>
+            </li>
+            <li><a href="#">Laços de Repetição</a>
+             <ul class="sub-menu clearfix">
+                <li><a href="html/marcha.htm" target="pagina">Troca de Marcha</a></li>
+                <li><a href="html/pedido.htm" target="pagina">Pedido</a></li>
+                <li><a href="html/tabuada.htm" target="pagina">Tabuada</a></li>
+                <li><a href="html/dice.htm" target="pagina">Dado</a></li>
+                <li><a href="html/tabela.htm" target="pagina">Preenche Tabela</a></li>
+            </ul></li>
+            <li><a href="#">Vetores e Matrizes</a>
+             <ul class="sub-menu clearfix">
+                <li><a href="html/sorteio.htm" target="pagina">Sorteio</a></li>
+                <li><a href="html/acerte.htm" target="pagina">Adivinhe</a></li>
+                <li><a href="html/notaAluno.htm" target="pagina">Notas de Alunos</a></li>
+                <li><a href="html/loteria.htm" target="pagina">Loteria</a></li>
+                <li><a href="html/carrinho.htm" target="pagina">Carrinho</a></li>
+            </ul></li>
+            <li><a href="#">Jogos</a>
+             <ul class="sub-menu clearfix">
+                <li><a href="html/quiz.html" target="pagina">Quiz</a></li>
+                <li><a href="html/memoria.htm" target="pagina">Jogo da Memória</a></li>
+            </ul></li>
+            
+
+        </ul>
+
+
+    </div>
+
+
+
+    
+
+    <div class="conteudo">
+
+       <a href="index.htm"> <img src="imagens/js.png" alt="" width="200" height="100"></a>
+        
+        <iframe src="" frameborder="0" class="dinamico" name="pagina">
+            
+    
+        </iframe>
+
+
+    </div>
+    
+
+    <footer id = "footer">
+
+       <script>
+
+        var data = new Date();
+
+        var dataAtual =  "Data Atual: " + data.getDate() + "/" + data.getMonth() + "/" + data.getFullYear();
+
+        var hora = data.getHours();
+
+        var minutos = data.getMinutes();
+
+        var periodo;
+
+        var idioma = (navigator.browserLanguage!=undefined)?  navigator.browserLanguage : navigator.language;
+
+        if (hora >= 0 && hora < 5)
+        {
+            periodo = "Madrugada";
+
+            document.getElementById("corpo").style.backgroundImage= 'url("imagens/madrugada.jpg")';
+
+        }else if (hora >= 5 && hora < 12){
+
+            periodo = "Manhã";
+            document.getElementById("corpo").style.backgroundImage= 'url("imagens/manha.jpg")';
+
+        }else if(hora >= 12 && hora < 18){
+
+            periodo = "Tarde"; 
+            document.getElementById("corpo").style.backgroundImage= 'url("imagens/tarde.jpg")';
+        }    
+
+        else{
+            periodo = "Noite"; 
+            document.getElementById("corpo").style.backgroundImage= 'url("imagens/noite.jpg")';
+        }
+
+        document.write("Hora da Atualização: "+hora+":"+minutos+"hrs. <br>" + dataAtual+ "<br> Agora está de "+periodo+".<br>O idioma do sistema é: "+idioma+".");
+    </script>
+
+</footer>
+
+</body>
+</html>

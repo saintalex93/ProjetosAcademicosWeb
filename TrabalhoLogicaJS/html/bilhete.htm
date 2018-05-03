@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+	
+
+	<h1 class="titulo">Bilhete único</h1>
+
+	<p>Esse programa tem a finalidade de simular as tarifas do transporte ṕúblico de São Paulo</p>
+
+	
+	
+	<div class="BUnico">
+		
+	<label for="">Saldo Bilhete Único: </label> <label for="" id="saldo"></label>
+	
+	<div class="BilheteBotoes">
+
+	<button id="carregar" onclick="hideBilhete(this)" class="Hover">Carregar</button>
+	<button id="conducao" onclick="hideBilhete(this)" class="Hover">Pegar Condução</button>
+	<button id="tarifas" onclick="hideBilhete(this)" class="Hover">Tarifas</button>
+	
+	</div>
+
+	<div class="chameleonB">
+		
+		<div class="hidden" id="dCarregar">
+			<label for="">Valor: </label> <input type="text" id="ValorCarregar" maxlength="9" placeholder="R$ 999,99"> <br>
+
+			<a  id="Aimagem" onclick="carregar(document.getElementById('ValorCarregar').value.replace('$','').replace(',','.'))" ></a>
+			
+		</div>
+
+		<div class="hidden" id="dConducao">
+			
+			<form action="">
+				
+				<table>
+					<tr>
+						<td id="radio">
+						  <input type="radio" name="trans" value="onibus" onclick="Clica(this.value)">Ônibus 
+				  		</td>
+				  		<td >
+				  			<input type="number" id="QdtOni" class= "hide" placeholder="Quantidade">
+						</td>
+				  	</tr>	
+				  	<tr>				  		
+						<td id="radio">
+							 <input type="radio" name="trans" value="metro" onclick="Clica(this.value)">Metrô 
+						</td>
+						<td>
+							<input type="number" id="QdtMetr" class= "hide" placeholder="Quantidade">
+						</td>
+				  	</tr>
+				  	<tr>				  		
+						<td id="radio">
+							<input type="radio" name="trans" value="integracao" onclick="Clica(this.value)">Integração 
+						</td>
+						<td>
+							<input type="number" id="QdtInt" class= "hide" placeholder="Quantidade">
+						</td>
+				  	</tr>	
+					
+					<tr>
+						<td class="ttarifa">
+							Total Tarifa:							
+						</td>
+
+						<td id="totalTarifa" class ="tvalor"></td>
+					</tr>
+
+				  		
+				</table> <br>
+			  		
+			</form>
+
+			<button onclick="Calcular()">Calcular</button>
+		</div>
+
+		<div class="hidden" id="dTarifas">
+				<table border="1">
+					
+				<caption>Tarifas:</caption>
+				
+				<tr>
+					<td>Transporte</td>
+					<td>Valor</td>
+				</tr>
+
+				<tr>
+					<td>Ônibus</td>
+					<td>R$ 3,80</td>
+				</tr>
+				<tr>
+					<td>Metrô</td>
+					<td>R$ 3,80</td>
+				</tr>
+				<tr>
+					<td>Integração</td>
+					<td>R$ 6,80</td>
+				</tr>
+
+				</table>
+
+		</div>
+
+	</div>
+
+
+
+	</div>
+
+
+</body>
+</html>
+
+
+<script src = "../JS/hide.js"></script>
+<script src = "../JS/mascara.js"></script>
+<script src ="../JS/bilhete.js"></script>
+<script>atualizarSaldo();</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+	<h1 class="titulo">Calcule</h1>
+
+
+	<p>Calcula dois Números com fluxo sequencial</p><br>
+
+<div class="palavra">
+	Número 1 <input type="text" id="num1"> 
+	
+	<select name="" id="lista" onchange="lista()">
+		<option value="...">...</option>
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+	</select>
+
+	Número 2	 <input type="text" id="num2">
+	<br>
+	<br>
+	<button onclick="alert(calcula(document.all('num1').value, document.all('num2').value))">Calcular</button>
+</div>
+<script src = "../JS/sequencial.js" >
+
+
+</script>
+
+</body>
+</html>
+
+

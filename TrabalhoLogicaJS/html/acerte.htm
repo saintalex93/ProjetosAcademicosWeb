@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Acerte</title>
+
+	<style>
+		
+		#Hide{
+
+			display: none;
+		}
+
+		#Restart{
+			display: none;
+			margin: auto;
+		}
+
+		.Content{
+			margin: 20px auto;
+			text-align: center;
+		}
+
+		label{
+			font-size: 20px;
+
+		}
+
+		#OKick, #ORandom {
+			color: green;
+		}
+
+
+	</style>
+</head>
+
+
+<div class="Content">
+
+	<h1>Acerte o número</h1>
+	<p>Chute um número de 0 a 10</p>
+	<input type="number" id="numb">
+	<button onclick="tryit(document.all('numb').value)" id="Botao">Try!</button>
+
+	<br><br><label for="" id  = "result"></label><br><br>
+
+	<div id="Hide">
+		<label for="">Números Sorteados: </label><output id="OKick"></output><br>
+		<label for="">Números Chutados: </label><output id="ORandom"></output><br><br>
+		<button id="Restart" onclick="Restart()">Restart</button>
+	</div>
+
+
+</div>
+
+<script src = "../JS/chute.js">
+
+
+</script>
+<body>
+	
+</body>
+</html>

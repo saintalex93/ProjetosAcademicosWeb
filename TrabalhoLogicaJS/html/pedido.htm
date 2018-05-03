@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Pedido</title>
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<h1 class="titulo">Pedido</h1>
+
+	<p>Esse script é usado para trabalhar com a tecnologia de check box. Efetua um pedido pelo check box e dá o valor total dele.
+	</p>	
+
+
+
+	<div class="pedido">
+	
+
+		<h2 class="titulo">Realizar Pedido:</h2>
+		<br>
+		
+		<table class="Tpedido" id="tabelaPedido" border="1">
+			<tr>
+				<td><input type="checkbox" name="Check" value="Pastel" ></td>
+				<td>Pastel</td>
+				<td>R$ 5,00</td>
+			</tr>
+
+			<tr>
+				<td><input type="checkbox" name="Check" value="Beirute"></td>
+				<td>Beirute</td>
+				<td>R$ 4,00</td>
+			</tr>	
+			
+			<tr>
+				<td><input type="checkbox" name="Check" value="Coxinha"></td>
+				<td>Coxinha</td>
+				<td>R$ 2,50</td>
+			</tr>
+
+
+			<tr>
+				<td><input type="checkbox" name="Check" value="Bolovo"></td>
+				<td>BolOvo</td>
+				<td>R$ 3,00</td>
+			</tr>
+		
+			<tr>
+				<td><input type="checkbox" name="Check" value="Cachaca"></td>
+				<td>Cachaça</td>
+				<td>R$ 1,00</td>
+			</tr>
+
+		 	<tr>
+		 		<td><input type="checkbox" name="Check" value="Refrigerante"></td>
+		 		<td>Refrigerante</td>
+		 		<td>R$ 4,50</td>
+		 	</tr>
+		 
+		</table>
+		<br> <br>
+		<output id="Total"></output>
+		
+		<br><br>
+		<button class="Hover" onclick="ConfereCheck()">Pedir!</button>
+
+	</div>
+	
+
+<script src = "../JS/pedido.js"></script>	
+</body>
+</html>
+
+
+

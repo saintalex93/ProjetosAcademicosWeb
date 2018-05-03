@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Semáfaro</title>
+
+	<style>
+
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		
+		.tudo{
+			text-align: center;
+			float: left;
+			width: 180px;
+			border: 5px solid black;
+			padding: 10px;
+			background-color: black;
+			clear: both;
+
+		}
+
+		#verde, #vermelho, #amarelo{
+			text-align: center;
+			width: 150px;
+			height: 150px;
+			border: solid black 15px;
+			margin-bottom: 5px;	
+			border-radius: 50%;
+
+		}
+
+		.tudo1{
+			text-align: center;
+			float: right;
+			width: 180px;
+			border: 5px solid black;
+			padding: 10px;
+			background-color: black;
+			clear: both
+			top:-200px;
+
+		}
+
+		#verde1, #vermelho1, #amarelo1{
+			text-align: center;
+			width: 150px;
+			height: 150px;
+			border: solid black 15px;
+			margin-bottom: 5px;	
+			border-radius: 50%;
+
+		}
+		img{
+			width: 500px;
+		}
+
+		.semafaro{
+			float: left;
+			padding-top: 50px;
+			width: 67%;
+			text-align: center;
+
+		}
+
+
+	</style>
+
+</head>
+<body>
+
+
+	<div class="tudo">
+
+		<div id="verde">
+
+		</div>
+
+		<div id="amarelo">
+
+		</div>
+
+		<div id="vermelho"></div>
+
+
+	</div>
+
+	<div class="semafaro">
+		<img src="semafaro.png" alt="">
+	</div>
+
+	<div class="tudo1">
+
+		<div id="verde1">
+
+		</div>
+
+		<div id="amarelo1">
+
+		</div>
+
+		<div id="vermelho1"></div>
+
+
+	</div>
+
+
+
+	<script>
+
+		start();
+
+
+
+
+		var	speed =0,
+		interval;
+
+		function start(){
+
+			interval = setInterval(timeIt, 100);
+			console.log(interval);
+		}
+
+		function stop(){
+			clearInterval(interval);
+			console.log(interval);
+			interval =0;
+
+
+		}
+
+		function timeIt(){
+			if (speed ==1)
+			{
+				document.getElementById('amarelo').style.background="white";
+				document.getElementById('vermelho').style.background="white";
+				document.getElementById('verde').style.background="green";
+				document.getElementById('verde1').style.background="white";
+
+
+				document.getElementById('vermelho1').style.background="red";
+				document.getElementById('amarelo1').style.background="white";
+
+
+			}
+
+			else if (speed ==31)
+			{
+				document.getElementById('verde').style.background="white";
+
+				document.getElementById('amarelo').style.background="yellow";
+			}
+			else if (speed ==36)
+			{
+				document.getElementById('amarelo').style.background="white";
+				document.getElementById('verde').style.background="white";
+
+
+				document.getElementById('vermelho').style.background="red";
+				document.getElementById('verde1').style.background="green";
+
+				document.getElementById('vermelho1').style.background="white";
+
+
+			}
+			if (speed == 61){
+				document.getElementById('verde1').style.background="white";
+
+				document.getElementById('amarelo1').style.background="yellow";
+
+			}
+
+			else if(speed == 67){
+				speed = 0;
+
+			}
+
+			// document.body.innerHTML = speed;
+			speed++;
+
+		}
+
+
+
+
+
+
+	</script>
+	
+</body>
+</html>

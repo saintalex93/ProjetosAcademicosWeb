@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<style>
+		#Center{
+			text-align: center;
+			margin: 30px auto;
+		}
+
+		.Questions{
+
+			margin: 20px auto;
+			text-align: justify-all;
+			padding: 50px;
+		}
+	</style>
+</head>
+<body>
+<div id="Center">
+	Pontuação: <output id="score"></output><br>
+<button onclick="Next()" id="Start">Começar!</button><br>
+
+<h2 id="Answers"></h2>
+</div>
+<div class="Questions">
+
+
+<div class="Question" id="Question"></div>
+</div>
+<script src = "../JS/quiz.js"></script>	
+<script src = "../JS/questionsDatabase.js"></script>	
+
+</body>
+</html>

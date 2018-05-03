@@ -1,0 +1,51 @@
+q<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tamanho</title>
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<h1 class="titulo">Tamanho da palavra</h1>
+
+<div class="palavra">
+	
+	<p>Esse Script retorna o tamanho em caracteres de uma palavra ou texto utilizando operador ternário.</p>
+	<br><br>
+	
+	<label for="">Digite uma Palavra:</label><br><input type="text" id="palavra"> <br>
+	
+	<br>
+	<button class="Hover" onclick="tamanho(document.all('palavra').value, 'Inverte')">Inverte</button>
+	
+	<button class="Hover" onclick="tamanho(document.all('palavra').value, 'Calcula')">Calcula</button>
+</div>
+	
+
+
+
+
+
+<script>
+	function tamanho(palavra, funcao){
+
+		if (funcao == 'Calcula') 
+
+		palavra.length >= 2 ? (alert("A palavra "+palavra+" tem " + palavra.length + ' Caracteres' ), 
+				document.getElementById('palavra').value = '' ):
+					(alert('Digite ao menos duas letras')), document.getElementById('palavra').value = ''; 
+
+		else
+
+		palavra.length >= 2 ? (alert(palavra.split('').reverse().join('')), document.all('palavra').value = '') :
+			 (alert('Digite ao menos duas letras'), document.getElementById('palavra').value = '' );
+
+	}
+
+</script>
+
+	
+</body>
+</html>
