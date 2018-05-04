@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Color</title>
+
+	<style>
+		button{
+			width: 120px;
+			height: 80px;
+		}
+
+		#buttons{
+			margin: 0 auto;
+			text-align: center;
+			padding: 20px;
+
+		}
+
+		#buttons button{
+			margin: 0 5px;
+			font-size: 20px;
+			color: white;
+			text-shadow: 1px 0px 0px black, 0px 1px 0px black, -1px 0px 0px black, 0px -1px 0px black;
+			transition: all 0.5s;
+		}
+
+		button:hover{
+			cursor: crosshair;
+			transform: rotate(360deg);
+			color: black;
+		}
+
+		img{
+			width: 400px;
+		}
+
+		#img{
+			margin: 0 auto;
+			text-align: center;
+
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="buttons">
+		<button value="red" onclick="mudaCor(this)" class="buttonCollor">Red</button>
+		<button value="green" onclick="mudaCor(this)" class="buttonCollor">Green</button>
+		<button value="blue" onclick="mudaCor(this)" class="buttonCollor">Blue</button>
+		<button value="purple" onclick="mudaCor(this)" class="buttonCollor">Purple</button>
+		<button value="yellow" onclick="mudaCor(this)" class="buttonCollor">Yellow</button>
+		<button value="gray" onclick="mudaCor(this)" class="buttonCollor">Gray</button>
+		<button value="black" onclick="mudaCor(this)" class="buttonCollor">Black</button>
+		<button value="pink" onclick="mudaCor(this)" class="buttonCollor">Pink</button>
+		<button value="cyan" onclick="mudaCor(this)" class="buttonCollor">Cyan</button>
+	</div>
+
+
+	<hr>
+	<br>
+	<div id="img">
+		<img src="cogumelo.png" alt="">
+	</div>
+	
+	<script>
+		colorForBullocks();
+		var suporte;	
+
+		function mudaCor(cor){
+			var buttons = document.getElementsByClassName('buttonCollor');
+
+			for(var i = 0;i < buttons.length; i++){
+
+				buttons[i].style.background = buttons[i].value;
+				buttons[i].style.color = "white";
+
+			}
+
+			cor.style.background = "white";
+			cor.style.color = "Black";
+
+
+
+
+
+
+			document.body.style.background = cor.value;
+
+			suporte = 1;
+
+
+
+
+		}
+
+
+		function colorForBullocks (){
+
+			var buttons = document.getElementsByClassName('buttonCollor');
+
+			for(var i = 0;i < buttons.length; i++){
+
+				buttons[i].style.background = buttons[i].value;
+			}
+
+
+
+		}
+
+
+
+	</script>
+
+</body>
+</html>
